@@ -4,7 +4,7 @@
     "dotenv": "^16.0.3",
     "glob": "^7.1.7"
   },
-  "name": "mira",
+  "name": "wilcher",
   "description": "Hell world!",
   "version": "1.0.0",
   "main": "index.js",
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LizyProject/Mira.git"
+    "url": "git+https://github.com/LizyProject/Wilcher.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LizyProject/Mira/issues"
+    "url": "https://github.com/LizyProject/Wilcher/issues"
   },
-  "homepage": "https://github.com/LizyProject/Mira#readme"
+  "homepage": "https://github.com/LizyProject/Wilcher#readme"
 }
