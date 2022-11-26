@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3",
     "glob": "^7.1.7"
   },
   "name": "mira",
@@ -21,4 +22,3 @@
   },
   "homepage": "https://github.com/LizyProject/Mira#readme"
 }
- 
