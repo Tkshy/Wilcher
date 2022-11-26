@@ -18,4 +18,4 @@ client.on('messageCreate', async (message) => {
     });
     console.log(error);
   });
-});
+}); 

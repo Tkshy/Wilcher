@@ -7,4 +7,4 @@ client.config = require('./config');
 
 require('./handler')(client);
 
-client.login(client.config.token);
+client.login(client.config.token); 
