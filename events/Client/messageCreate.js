@@ -6,8 +6,20 @@ client.on('messageCreate', async (message) => {
 
   const [ cmd, ...args ] = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
   const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases?.includes(cmd.toLowerCase()));
-
   if(!command) return;
+
+  if(command.owner === true) {
+    if(message.author.id !== process.env.developer) {
+      return message.channel.send({
+        embeds: [
+          new EmbedBuilder()
+          .setColor('Red')
+          .setDescription('Sorry this command only for bot developer!')
+        ]
+      });
+    };
+  };
+
   await command.run(client, message, args).catch((error) => {
     message.channel.send({
       embeds: [
