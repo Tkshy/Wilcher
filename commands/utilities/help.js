@@ -18,7 +18,7 @@ module.exports = {
       });
     };
 
-    let command = client.commands.get(cmd.toLowerCase());
+    let command = client.commands.get([...client.commands.keys()].find(x => x.toLowerCase() === cmd.toLowerCase()));
     if(!command) {
       return message.channel.send({
         embeds: [
