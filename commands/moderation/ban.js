@@ -16,8 +16,7 @@ module.exports = {
       });
     };
 
-    let member = message.mentions.members.first();
-    let memberargs = message.guild.members.cache.get(args[0]);
+    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     let reason = args.slice(1).join(' ') || 'Bad member.'
 
     if(!member) {
@@ -36,20 +35,12 @@ module.exports = {
           .setDescription('You cannot ban yourself!')
         ]
       });
-    } else if(!memberargs) {
+    } else if(!member) {
       return message.channel.send({
         embeds: [
           new EmbedBuilder()
           .setColor('Red')
           .setDescription('I cannot find a member with that ID!')
-        ]
-      });
-    } else if(memberargs === message.author.id) {
-      return message.channel.send({
-        embeds: [
-          new EmbedBuilder()
-          .setColor('Red')
-          .setDescription('You cannot ban yourself!')
         ]
       });
     } else {
