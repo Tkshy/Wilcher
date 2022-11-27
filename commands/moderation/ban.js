@@ -18,7 +18,7 @@ module.exports = {
 
     let member = message.mentions.members.first();
     let memberargs = message.guild.members.cache.get(args[0]);
-    let reason = args[1].join || args.join[1] || 'Bad member';
+    let reason = args.slice(1).join(' ') || 'Bad member.'
 
     if(!member) {
       return message.channel.send({
