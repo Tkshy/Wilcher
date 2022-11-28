@@ -1,8 +1,10 @@
 {
   "dependencies": {
+    "better-sqlite3": "^8.0.0",
     "discord.js": "^14.6.0",
     "dotenv": "^16.0.3",
-    "glob": "^7.1.7"
+    "glob": "^7.1.7",
+    "quick.db": "^9.0.6"
   },
   "name": "wilcher",
   "description": "Hell world!",
@@ -15,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LizyProject/Wilcher.git"
+    "url": "git+https://github.com/Tkshy/Wilcher.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LizyProject/Wilcher/issues"
+    "url": "https://github.com/Tkshy/Wilcher/issues"
   },
-  "homepage": "https://github.com/LizyProject/Wilcher#readme"
+  "homepage": "https://github.com/Tkshy/Wilcher#readme"
 }
