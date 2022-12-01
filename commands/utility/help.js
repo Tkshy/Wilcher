@@ -45,41 +45,26 @@ module.exports = {
           ]
         });
       };
-    } else {
-      return message.reply({
+    } else if(choice === 'fun') {
+      message.channel.send({
         embeds: [
           new EmbedBuilder()
-          .setColor('00FFFF')
-          .setAuthor({ name: `${client.user.username} Commnad List`, iconURL: client.user.displayAvatarURL({ format: 'png' })})
-          .setDescription(`My prefix in \`${message.guild.name}\` is \`${prefix}\`\nPlease swap the Buttons to see the help category pages\nRun \`${prefix}help <command>\` to see info for that command.\n\n**Command Categories**\n🤣・\`Fun\`\n🖼️・\`Image\`\n⛔・\`Moderation\`\n⚙️・\`Utility\`\n\n_If you **need help** or **have trouble** using any **command** or **find a bug**, you can also join our [Bot Support](https://discord.gg/tMMgdGNcP3) Discord Server_`)
-          .setImage('https://media.discordapp.net/attachments/1033544540574986252/1046718597436813382/standard_1.gif')
-          .setFooter({ text: `Main Page ~ ©️ Tokioshy 2022` })
-        ],
-        components: [
-          new ActionRowBuilder()
-          .addComponents(
-            new ButtonBuilder()
-            .setStyle('Success')
-            .setCustomId('lefttoutility')
-            .setEmoji('◀️'),
-            new ButtonBuilder()
-            .setStyle('Primary')
-            .setCustomId('home')
-            .setEmoji('🏠'),
-            new ButtonBuilder()
-            .setStyle('Secondary')
-            .setCustomId('delete')
-            .setEmoji('1046723999205437460'),
-            new ButtonBuilder()
-            .setStyle('Success')
-            .setCustomId('righttofun')
-            .setEmoji('▶️'),
-          )
-        ],
-        allowedMentions: {
-          repliedUser: false
-        }
+          .setColor('DarkAqua')
+          .setAuthor({ name: `${client.user.username} Command List`, iconURL: client.user.displayAvatarURL({ format: 'png' }) })
+          .setDescription(`This is a command category for \`Fun\`\nRun \`${prefix}help <command>\` to see info for that command.\n\n`)
+          .setFooter({ text: 'Fun Page ~ ©️ Tokioshy 2022' })
+        ]
       });
+    } else {
+      message.channel.send({
+        embeds: [
+          new EmbedBuilder()
+          .setColor('DarkAqua')
+          .setAuthor({ name: `${client.user.username} Command List`, iconURL: client.user.displayAvatarURL({ format: 'png' }) })
+          .setDescription(`Hello \`${message.author.username}\`!\nMy prefix in \`${message.guild.name}\` is \`${prefix}\`\nRun \`${prefix}help <Categories>\` to see command in tha category.\n\n**Command Categories**\n🤣・\`Fun\`\n🖼️・\`Image\`\n⛔・\`Moderation\`\n⚙️・\`Utility\`\n\n_If you **need help** or **have trouble** using any **command** or **find bug**, you can also join our [**Bot Support**](https://discord.gg/tMMgdGNcP3) Discord server._`)
+          .setFooter({ text: 'Main Page ~ ©️ Tokioshy 2022' })
+        ]
+      })
     };
   },
 };
