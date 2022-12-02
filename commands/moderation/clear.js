@@ -36,7 +36,7 @@ module.exports = {
       });
     };
     
-    if(args[0] > 100 || args[0] < 1) {
+    if(parseInt(args[0] > 100 || args[0] < 1)) {
       return message.channel.send({
         embeds: [
           new EmbedBuilder()
@@ -46,7 +46,7 @@ module.exports = {
       });
     };
   
-    message.channel.bulkDelete(args[0]).then((msg) => {
+    message.channel.bulkDelete(parseInt(args[0]) + 1).then((msg) => {
       message.channel.send({
         embeds: [
           new EmbedBuilder()
