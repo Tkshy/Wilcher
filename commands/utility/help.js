@@ -19,7 +19,7 @@ module.exports = {
               new EmbedBuilder()
               .setColor('DarkAqua')
               .setAuthor({ name: 'Fun Command List', iconURL: client.user.displayAvatarURL({ format: 'png' }) })
-              .setDescription(`\`${client.fun.map(cmd => cmd.name).join(', ')}\``)
+              .setDescription(`\`${client.fun.map(cmd => cmd.name).join('`, `')}\``)
               .setFooter({ text: 'Fun Page ~ ©️ Tokioshy 2022' })
             ]
           });
@@ -31,7 +31,7 @@ module.exports = {
               new EmbedBuilder()
               .setColor('DarkAqua')
               .setAuthor({ name: 'Image Command List', iconURL: client.user.displayAvatarURL({ format: 'png' }) })
-              .setDescription(`\`${client.image.map(cmd => cmd.name).join(', ')}\``)
+              .setDescription(`\`${client.image.map(cmd => cmd.name).join('`, `')}\``)
               .setFooter({ text: 'Image Page ~ ©️ Tokioshy 2022' })
             ]
           });
@@ -43,7 +43,7 @@ module.exports = {
               new EmbedBuilder()
               .setColor('DarkAqua')
               .setAuthor({ name: 'Moderation Command List', iconURL: client.user.displayAvatarURL({ format: 'png' }) })
-              .setDescription(`\`${client.moderation.map(cmd => cmd.name).join(', ')}\``)
+              .setDescription(`\`${client.moderation.map(cmd => cmd.name).join('`, `')}\``)
               .setFooter({ text: 'Moderation Page ~ ©️ Tokioshy 2022' })
             ]
           });
@@ -55,7 +55,7 @@ module.exports = {
               new EmbedBuilder()
               .setColor('DarkAqua')
               .setAuthor({ name: 'Utility Command List', iconURL: client.user.displayAvatarURL({ format: 'png' }) })
-              .setDescription(`\`${client.utility.map(cmd => cmd.name).join(', ')}\``)
+              .setDescription(`\`${client.utility.map(cmd => cmd.name).join('`, `')}\``)
               .setFooter({ text: 'Utility Page ~ ©️ Tokioshy 2022' })
             ]
           });
