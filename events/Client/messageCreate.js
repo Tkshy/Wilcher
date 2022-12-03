@@ -1,10 +1,13 @@
 const client = require('../../index');
 const { EmbedBuilder } = require('discord.js');
+const { QuickDB } = require('quick.db');
+const db = new QuickDB();
 
 client.on('messageCreate', async (message) => {
-  if(message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(client.config.prefix)) return;
+  let prefix = await db.get(`prefix_${message.guild.id}`) || client.config.prefix;
+  if(message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(prefix)) return;
 
-  const [ cmd, ...args ] = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
+  const [ cmd, ...args ] = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases?.includes(cmd.toLowerCase()));
   if(!command) return;
 

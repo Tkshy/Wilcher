@@ -12,49 +12,64 @@ module.exports = {
     let choice = args[0];
 
     if(choice) {
-      let cmd = args[0];
-
-      if(!cmd) {
-        return message.channel.send({
-          embeds: [
-            new EmbedBuilder()
-            .setColor('Red')
-            .setDescription('Please mention command that you want to see the description!')
-          ]
-        });
-      };
-
-      let command = client.commands.get([...client.commands.keys()].find(x => x.toLowerCase() === cmd.toLowerCase()));
-      if(!command) {
-        return message.channel.send({
-          embeds: [
-            new EmbedBuilder()
-            .setColor('Red')
-            .setDescription('Command not found.')
-          ]
-        });
+      let cate = args[0];
+      if(cate.toLowerCase() === 'fun' || cate.toLowerCase() === 'image' || cate.toLowerCase() === 'moderation' || cate.toLowerCase() === 'utility') {
+        if(cate.toLowerCase() === 'fun') {
+          return message.channel.send({
+            embeds: [
+              new EmbedBuilder()
+              .setColor('DarkAqua')
+              .setAuthor({ name: 'Fun Command List', iconURL: client.user.displayAvatarURL({ format: 'png' }) })
+              .setDescription('Soon!')
+              .setFooter({ text: 'Fun Page ~ ©️ Tokioshy 2022' })
+            ]
+          });
+        };
+  
+        if(cate.toLowerCase() === 'image') {
+          return message.channel.send({
+            embeds: [
+              new EmbedBuilder()
+              .setColor('DarkAqua')
+              .setAuthor({ name: 'Image Command List', iconURL: client.user.displayAvatarURL({ format: 'png' }) })
+              .setDescription('Soon!')
+              .setFooter({ text: 'Image Page ~ ©️ Tokioshy 2022' })
+            ]
+          });
+        };
+  
+        if(cate.toLowerCase() === 'moderation') {
+          return message.channel.send({
+            embeds: [
+              new EmbedBuilder()
+              .setColor('DarkAqua')
+              .setAuthor({ name: 'Moderation Command List', iconURL: client.user.displayAvatarURL({ format: 'png' }) })
+              .setDescription('Soon!')
+              .setFooter({ text: 'Moderation Page ~ ©️ Tokioshy 2022' })
+            ]
+          });
+        };
+  
+        if(cate.toLowerCase() === 'utility') {
+          return message.channel.send({
+            embeds: [
+              new EmbedBuilder()
+              .setColor('DarkAqua')
+              .setAuthor({ name: 'Utility Command List', iconURL: client.user.displayAvatarURL({ format: 'png' }) })
+              .setDescription('Soon!')
+              .setFooter({ text: 'Utility Page ~ ©️ Tokioshy 2022' })
+            ]
+          });
+        };
       } else {
-        message.channel.send({
+        return message.channel.send({
           embeds: [
             new EmbedBuilder()
-            .setTitle(`Information about the command`)
-            .setColor('DarkAqua')
-            .setDescription(`Command name: ${command.name}\nCommand description: ${command.description}\nCommand owner: ${command.owner ? 'Yes' : 'No'}`)
-            .setFooter({ text: `Requested by ${message.author.tag}` })
-            .setTimestamp()
+            .setColor('Red')
+            .setDescription('Categories not found.')
           ]
         });
       };
-    } else if(choice === 'fun') {
-      message.channel.send({
-        embeds: [
-          new EmbedBuilder()
-          .setColor('DarkAqua')
-          .setAuthor({ name: `${client.user.username} Command List`, iconURL: client.user.displayAvatarURL({ format: 'png' }) })
-          .setDescription(`This is a command category for \`Fun\`\nRun \`${prefix}help <command>\` to see info for that command.\n\n`)
-          .setFooter({ text: 'Fun Page ~ ©️ Tokioshy 2022' })
-        ]
-      });
     } else {
       message.channel.send({
         embeds: [
