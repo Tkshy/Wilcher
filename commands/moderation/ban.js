@@ -4,7 +4,6 @@ module.exports = {
   name: 'ban',
   alises: [],
   owner: false,
-  description: 'Ban someone from the server',
   run: async (client, message, args) => {
     if(!message.member.permissions.has('BanMembers')) {
       return message.channel.send({

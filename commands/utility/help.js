@@ -6,7 +6,6 @@ module.exports = {
   name: 'help',
   aliases: ['h'],
   owner: false,
-  description: 'See information about the command',
   run: async (client, message, args) => {
     let prefix = await db.get(`prefix_${message.guild.id}`) || client.config.prefix;
     let choice = args[0];

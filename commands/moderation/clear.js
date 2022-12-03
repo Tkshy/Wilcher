@@ -4,7 +4,6 @@ module.exports = {
   name: 'clear',
   aliases: ['c', 'purge'],
   owner: false,
-  description: 'Clear some message in the channel',
   run: async (client, message, args) => {
     if(!message.member.permissions.has('ManageMessages')) {
       return message.channel.send({
@@ -51,7 +50,7 @@ module.exports = {
         embeds: [
           new EmbedBuilder()
           .setColor('Green')
-          .setDescription(`Successfully deleted ${msg.size} message(s) in this channel.`)
+          .setDescription(`Successfully deleted ${msg.size - 1} message(s) in this channel.`)
         ]
       }).then((success) => {
         setTimeout(() => success.delete(), 4000);

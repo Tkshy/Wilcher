@@ -4,7 +4,6 @@ module.exports = {
   name: 'ping',
   aliases: [],
   owner: false,
-  description: 'Get bot ping',
   run: async (client, message) => {
     message.channel.send({
       embeds: [
