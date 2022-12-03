@@ -8,4 +8,4 @@ client.config = require('./config');
 
 require('./handler')(client);
 
-client.login(process.env.token);
+client.login(process.env.token); // lemao pisan sad sad
