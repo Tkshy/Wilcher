@@ -54,7 +54,7 @@ module.exports = async (client) => {
     };
   });
 
-  const image = await globPromise(`${process.cwd()}/commands/utility/*.js`); // image
+  const image = await globPromise(`${process.cwd()}/commands/image/*.js`); // image
   image.map((value) => {
     const file = require(value);
     const splitted = value.split('/');
