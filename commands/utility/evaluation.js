@@ -12,7 +12,7 @@ module.exports = {
     }
  
     try {
-      const code = args.join(' ');
+      const code = args.join(' ').replace(/\`\`\`(?:[^\s+]\n)?(.*?)\n?\`\`\`/gs, "$1");
       
       if(!code) {
         return message.channel.send({
