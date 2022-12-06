@@ -4,7 +4,7 @@ const { QuickDB } = require('quick.db');
 const db = new QuickDB();
 
 client.on('messageCreate', async (message) => {
-  let prefix = await db.get(`prefix_${message.guild.id}`) || client.config.prefix;
+  let prefix = await db.get(`prefix_${message.guild.id}`) || 'wr.'
   if(message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(prefix)) return;
 
   const [ cmd, ...args ] = message.content.slice(prefix.length).trim().split(/ +/g);

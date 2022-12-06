@@ -8,7 +8,6 @@ client.fun = new Collection();
 client.moderation = new Collection();
 client.image = new Collection();
 client.utility = new Collection();
-client.config = require('./config');
 
 require('./handler')(client);
 
